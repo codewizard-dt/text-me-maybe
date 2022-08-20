@@ -1,4 +1,5 @@
 INSTRUCTIONS
+.npmrc
 # Logs
 logs
 *.log
