@@ -1,5 +1,5 @@
 {
-  "name": "JATE",
+  "name": "text-me-maybe",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,7 +9,8 @@
     "server": "",
     "build": "",
     "install": "",
-    "client": ""
+    "client": "",
+    "postinstall": "npm i --prefix client && npm i --prefix server"
   },
   "keywords": [],
   "author": "",
