@@ -5,11 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start:dev": "concurrently \"npm run build\" \"npm run server\"",
-    "start": "npm run server",
-    "server": "npm run start --prefix server",
-    "build": "npm run build --prefix client",
-    "postinstall": "npm i --prefix client && npm i --prefix server",
-    "heroku-postbuild": "npm run build --prefix client && chmod 555 ./server/server.js"
+    "start": "npm run server/server.js",
+    "server": "npm run start --prefix server"
   },
   "keywords": [],
   "author": "",
