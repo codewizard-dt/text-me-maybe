@@ -10,7 +10,7 @@
     "build": "npm run build --prefix client",
     "install": "",
     "client": "",
-    "postinstall": "npm i --prefix client && npm i --prefix server"
+    "postinstall": "npm i --dev --prefix client && npm i --prefix server"
   },
   "keywords": [],
   "author": "",
