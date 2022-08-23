@@ -30,7 +30,6 @@ module.exports = () => {
         short_name: 'TextMe',
         description: 'A wonderful text editor',
         background_color: '#242520',
-        id: '/',
         start_url: './',
         publicPath: './',
         icons: [
