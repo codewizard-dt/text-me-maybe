@@ -25,6 +25,8 @@ module.exports = () => {
       }),
       new WebpackPwaManifest({
         name: 'Text Me Maybe',
+        fingerprints: false,
+        inject: true,
         short_name: 'TextMe',
         description: 'A wonderful text editor',
         background_color: '#242520',
