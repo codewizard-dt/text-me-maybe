@@ -2,12 +2,12 @@
   "name": "text-me-maybe",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start:dev": "concurrently \"npm run build\" \"npm run dev --prefix server\"",
+    "start:dev": "concurrently \"npm run build\" \"npm run server\"",
     "start": "npm run server",
-    "server": "npm run start --prefix server",
-    "build": "npm run build --prefix client",
+    "server": "cd server && npm run start",
+    "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build --prefix client && chmod 555 ./server/server.js"
   },
   "keywords": [],
