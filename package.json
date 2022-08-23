@@ -9,8 +9,7 @@
     "server": "npm run start --prefix server",
     "build": "npm run build --prefix client",
     "install": "",
-    "client": "",
-    "postinstall": "npm i --dev --prefix client && npm i --prefix server"
+    "client": ""
   },
   "keywords": [],
   "author": "",
