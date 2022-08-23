@@ -14,6 +14,20 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+  max-height: 100vh;
+}
+
+main {
+  flex: 1;
+  max-height: calc(100% - var(--navbar-height));
+  overflow: hidden scroll;
+}
+
+.CodeMirror {
+  height: unset;
 }
 
 h1 {
@@ -31,6 +45,14 @@ h1 {
   font-size: 22px;
   font-weight: 550;
   letter-spacing: 0.9px;
+}
+#navbar h1 {
+  flex: 1;
+  text-align: center;
+}
+
+#buttonInstall {
+  display: none;
 }
 
 .navbar-brand img {
