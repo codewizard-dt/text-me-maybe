@@ -12,25 +12,22 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// Takes the content and stores it in IndexedDB
 export const putDb = async (content) => {
   const tmmDb = await openDB('tmm', 1);
   const tx = tmmDb.transaction('tmm', 'readwrite');
   const store = tx.objectStore('tmm');
   const request = store.put({ id: 1, text: content });
   const result = await request;
-  console.log('🚀 - data saved to the database', result);
 };
 
-// TODO: Add logic for a method that gets all the content from the database
+// Gets the content from IndexedDB
 export const getDb = async () => {
-  // console.log('GET all from the database');
   const tmmDb = await openDB('tmm', 1);
   const tx = tmmDb.transaction('tmm', 'readonly');
   const store = tx.objectStore('tmm');
   const request = store.getAll();
   const result = await request;
-  // console.log('result.value', result);
   return result;
 };
 

@@ -1,3 +1,4 @@
+// My custom header hehe
 const header = `
 /*
 

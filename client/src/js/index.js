@@ -19,6 +19,7 @@ const loadSpinner = () => {
 
 const editor = new Editor();
 
+// If the editor is not loaded then show a 'loading' spinner
 if (typeof editor === 'undefined') {
   loadSpinner();
 }
