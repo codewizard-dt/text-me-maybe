@@ -8,7 +8,7 @@
     "start": "npm run server",
     "server": "node ./server/server.js",
     "build": "npm run build --prefix client",
-    "postinstall": "npm i --prefix client && npm i --prefix server",
+    "postinstall": "npm i --prefix client",
     "heroku-postbuild": "npm run build --prefix client && chmod 555 ./server/server.js"
   },
   "keywords": [],
