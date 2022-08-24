@@ -23,7 +23,7 @@ body {
 main {
   flex: 1;
   max-height: calc(100% - var(--navbar-height));
-  overflow: hidden scroll;
+  overflow: hidden auto;
 }
 
 .CodeMirror {

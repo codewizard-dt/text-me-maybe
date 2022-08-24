@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
 
@@ -28,6 +28,8 @@ module.exports = () => {
         short_name: 'TextMe',
         description: 'A wonderful text editor',
         background_color: '#242520',
+        fingerprints: false,
+        inject: true,
         start_url: './',
         publicPath: './',
         icons: [
@@ -50,14 +52,14 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'service-worker.js',
       }),
-      new MiniCssExtractPlugin()
+      // new MiniCssExtractPlugin()
     ],
 
     module: {
       rules: [
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          use: ['style-loader', 'css-loader'],
         },
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
