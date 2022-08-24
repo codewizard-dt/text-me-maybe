@@ -9,8 +9,10 @@ const publicPath = path.join(process.cwd(), "client", 'dist');
 app.use(express.static(publicPath));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 console.log(publicPath)
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
-app.listen(PORT, () => console.log(`Now listening on port: ${PORT} `));
+app.listen(PORT, () => console.log(`Now listening on port: ${process.env.HOST || 'http://localhost'} ${PORT} `));
