@@ -1,11 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path');
 const { InjectManifest } = require('workbox-webpack-plugin');
-
-// TODO: Add and configure workbox plugins for a service worker and manifest file.
-// TODO: Add CSS loaders and babel to webpack.
 
 module.exports = () => {
   return {
@@ -19,10 +15,12 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
+      // takes html template and outputs an HTML file with appropriate asset links
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'Text Me Maybe'
       }),
+      // creates the PWA manifest
       new WebpackPwaManifest({
         name: 'Text Me Maybe',
         short_name: 'TextMe',
@@ -46,8 +44,8 @@ module.exports = () => {
             purpose: 'maskable'
           },
         ]
-
       }),
+      // Creates the service worker based on the src
       new InjectManifest({
         swSrc: './src-sw.js',
         swDest: 'service-worker.js',
@@ -57,14 +55,17 @@ module.exports = () => {
 
     module: {
       rules: [
+        // creates CSS bundle
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
         },
+        // creates images
         {
           test: /\.(png|svg|jpg|jpeg|gif)$/i,
           type: 'asset/resource',
         },
+        // creates js bundles
         {
           test: /\.m?js$/,
           exclude: /(node_modules|bower_components)/,
@@ -76,11 +77,9 @@ module.exports = () => {
                 '@babel/plugin-proposal-object-rest-spread',
                 '@babel/transform-runtime',
               ],
-
             },
           },
         },
-
       ],
     },
   };
